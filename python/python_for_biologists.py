@@ -78,3 +78,66 @@ protein_name = "GFP" ;
  
 print('You have', human_genes, 'genes')
 print(protein_name, "stands for green fluorescent protein")
+
+
+# exercises 
+# 1. ASCII art: Write a Python program that prints out the image below.
+
+print(" __")              
+print("|  \\   |\\ |    /\\ ") 
+print("|__/   | \\|   /--\\")
+print("                ___             ___           ___    ____      ")
+print( " |\\   /|   |   | ___   |   |   |___  |     |   |    |    | ")
+print(" | \\ / |   |   |____|  |___|   |___  |___  |   |    |____|     ")
+
+# 2. Finding bugs: Find and exterminate the bugs in the Python code below
+
+# Please correct my errors. 
+first_10_bp = "gggtgcgacg"
+second_10_bp = "attcattgtt"
+gene = first_10_bp + second_10_bp
+
+print('The first 20 bp of BRAC2 gene are', gene)
+
+#so that it prints out:
+#The first 20 bp of BRAC2 gene are gggtgcgacgattcattgtt
+
+# 3.When precise control with the output of your program is needed (lining up columns, decimal points, etc.),
+#    the print function of Python is your tool. It takes two arguments:
+
+
+print("%15s %10s %10s" % ("Amino acid", "1-letter", "codon"))
+print("%15s %10s %10s" % ("----------", "--------", "-----"))
+print("%15s %10s %10s" % ("Serine", "S", "AGT"))
+print("%15s %10s %10s" % ("", "", "AGC"))
+print("%15s %10s %10s" % ("Cysteine", "C", "TGT"))
+
+  
+# Data types 
+
+#Numeric 
+import math
+human_genes = 21306
+US_population = 328918373
+print ('Number of human genes:', human_genes)
+print ('Number of human genes in US:', US_population)
+
+exon_per_gene = 8.9 
+print('Human exons per gene:', exon_per_gene)
+
+human_exons = human_genes * exon_per_gene 
+
+print ('Humber of human exons:', human_exons)
+
+human_exons = int (human_exons)
+
+print ("Approximate number of human exon:", human_exons)
+
+firstProduct = (9.4 * 0.2321) * 5.6
+secondProduct = 9.4 * (0.2321 * 5.6)
+
+print (firstProduct - secondProduct)
+
+two_pie = 2.0 * math.pi
+print (' Two_pi = ', two_pie)
+print ("sin(two_pie) =", math.sin(two_pie))
