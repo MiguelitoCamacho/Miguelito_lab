@@ -141,3 +141,212 @@ print (firstProduct - secondProduct)
 two_pie = 2.0 * math.pi
 print (' Two_pi = ', two_pie)
 print ("sin(two_pie) =", math.sin(two_pie))
+
+
+# Strings 
+
+protein = 'GFP'
+protein_seq_begin = 'MSKGEELFTG'
+protein_seq_end = 'HGMDELYK'
+protein_seq = protein_seq_begin + '...' + protein_seq_end
+print( protein_seq)
+
+print ( 'Protein sequence of GPF: ' + protein_seq)
+print ( 'Protein sequence of GPF:',protein_seq)
+
+DNA_seq = 'atgagtaaag...actatacaaa'
+DNA_seq = DNA_seq.upper()
+print ('DNA Sequence: ' + DNA_seq)
+
+print ( 'The second nucleotide: ' + DNA_seq[1])
+print ( 'The last nucleotide: ' + DNA_seq[-1])
+
+first_codon = DNA_seq[0:3]  # it could be also [ : 3]
+last_codon = DNA_seq[-3:]
+print( 'The first codon: ' + first_codon)
+print ('The last codon: ' + last_codon)
+
+# Lists 
+
+stop_codons = [ 'TAA', 'tAG']
+print( stop_codons)
+
+first_stop_codon = stop_codons[0]
+print(first_stop_codon)
+
+stop_codons [1] = 'TAG'
+print( stop_codons)
+
+stop_codons.append('TGA') 
+print( stop_codons)
+
+number_of_stop_codons = len (stop_codons)
+print ('There are', number_of_stop_codons, 'stop codons')
+
+DNA_seq = ''.join(stop_codons)
+print( DNA_seq)
+
+DNA_list = list(DNA_seq)
+print(DNA_list)
+                              
+
+second_codon = DNA_list[3:6]
+print('This is the second codon: ', second_codon)
+
+print (''.join(second_codon))
+
+
+DNA_list_duplicate = DNA_list.copy()
+print (DNA_list_duplicate)
+
+DNA_list_duplicate.insert(5, '?')
+print (DNA_list_duplicate)
+
+
+DNA_list_duplicate.pop(5)
+print(DNA_list_duplicate)
+
+# Tupples 
+
+Histidine = ('H', 'CAT', 'CAC')
+Lysine = 'K', 'AAA', 'AAG'
+Arginine = ( 'R', 'CGT', 'CGA', 'CGG', 'AGA', 'AGG')
+
+print ('Histidine', Histidine)
+print ('Lysine', Lysine)
+print('Arginine', Arginine)
+
+basic = [ Histidine, Lysine]
+print ('Basic amino acids:', basic)
+basic.append(Arginine)
+print ('Basic amino acids:', basic)
+
+His = basic[0]
+print('His:', His)
+
+His_codons = basic[0][1:]
+
+print('His codons:', His_codons)
+
+codon1, codon2 = His_codons
+print('codon1:', codon1)
+print('codon2:', codon2)
+
+
+protein_seq = basic[0][0] + basic[1][0] + basic[2][0]
+
+print('Protein seq:', protein_seq)
+
+#Dictionary 
+
+restriction_enzymes = { 'EcoRI': 'GAATTC',
+                        'AluI': 'AGCT',
+                        'NotI' : 'GCGGCCGC',
+                        'TaqI': 'TCGA'
+  }
+print (restriction_enzymes)
+
+# how we extract keys and values and make them list 
+
+keys = list( restriction_enzymes.keys())
+
+print( 'Keys as a list:', keys)
+
+values = list(restriction_enzymes.values())
+print('Values as a list:', values)
+
+mykey = 'crispr'
+check = mykey in restriction_enzymes
+print (' Is', mykey, 'key in the dcitionary?', check)
+
+EcorRI_value = restriction_enzymes['EcoRI']
+print ('The recognition site of EcoRI is', EcorRI_value)
+
+restriction_enzymes['EcoRV'] = 'GATATC'
+print('With the new item:', restriction_enzymes)
+
+del restriction_enzymes['EcoRV']
+print('Original dictionary:', restriction_enzymes)
+
+# Exercises II 
+#1. Arithmetic puzzle: Create two numeric float variables
+x = 0.1 * 10.0
+y = 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1
+print(x-y)
+
+#2. BRAC2 mRNA: Visit the Web Page. 
+
+BRAC2_DNA_seq = 'gggtgcgacg attcattgtt ttcggacaag tggataggca accactaccg gtggattgtc'
+print(BRAC2_DNA_seq)
+BRAC2_DNA_seq = BRAC2_DNA_seq.replace(' ','')
+print(BRAC2_DNA_seq)
+Upper_case_BRAC2 = BRAC2_DNA_seq.upper()
+lower_case_BRAC2 = BRAC2_DNA_seq.lower()
+print('This is the BRAC2 se in upper case', Upper_case_BRAC2)
+print('This is the BRAC2 seq in lowercase', lower_case_BRAC2)
+
+#3. List of codon acidi acids: Creat a list with the DNA codons for Glutamine
+
+codons = [ 'CAA', 'CAG']
+
+codons.extend(['GAU', 'GAC'])
+
+print(codons)
+
+
+print("Glutamine codons:", codons[:2])
+print('Aspartic acid cordons:', codons[3:])
+
+
+# 4. append() and pop(): Sometimes it is convenient to add to or subtract from a list without worrying about indecies.
+
+codons.append( 'GAT')
+last_element = codons.pop()
+
+print( last_element)
+
+#5. Sorting a list of string 
+
+sorted_list = sorted(codons)
+print (' This is the sorted list', sorted_list)
+
+numbers = [21, 13, 0, -3.1, 21, 33, 2]
+numbers.sort()
+print ('This are the sorted numbers:', numbers)
+
+#7. Dictionary of codons for acidic acids 
+
+import operator
+codon_to_amino_acid = {
+    'UUU': 'Phenylalanine', 'UUC': 'Phenylalanine', 'UUA': 'Leucine', 'UUG': 'Leucine',
+    'UCU': 'Serine', 'UCC': 'Serine', 'UCA': 'Serine', 'UCG': 'Serine',
+    'UAU': 'Tyrosine', 'UAC': 'Tyrosine', 'UAA': 'Stop', 'UAG': 'Stop',
+    'UGU': 'Cysteine', 'UGC': 'Cysteine', 'UGA': 'Stop', 'UGG': 'Tryptophan',
+    'CUU': 'Leucine', 'CUC': 'Leucine', 'CUA': 'Leucine', 'CUG': 'Leucine',
+    'CCU': 'Proline', 'CCC': 'Proline', 'CCA': 'Proline', 'CCG': 'Proline',
+    'CAU': 'Histidine', 'CAC': 'Histidine', 'CAA': 'Glutamine', 'CAG': 'Glutamine',
+    'CGU': 'Arginine', 'CGC': 'Arginine', 'CGA': 'Arginine', 'CGG': 'Arginine',
+    'AUU': 'Isoleucine', 'AUC': 'Isoleucine', 'AUA': 'Isoleucine', 'AUG': 'Methionine',
+    'ACU': 'Threonine', 'ACC': 'Threonine', 'ACA': 'Threonine', 'ACG': 'Threonine',
+    'AAU': 'Asparagine', 'AAC': 'Asparagine', 'AAA': 'Lysine', 'AAG': 'Lysine',
+    'AGU': 'Serine', 'AGC': 'Serine', 'AGA': 'Arginine', 'AGG': 'Arginine',
+    'GUU': 'Valine', 'GUC': 'Valine', 'GUA': 'Valine', 'GUG': 'Valine',
+    'GCU': 'Alanine', 'GCC': 'Alanine', 'GCA': 'Alanine', 'GCG': 'Alanine',
+    'GAU': 'Aspartic acid', 'GAC': 'Aspartic acid', 'GAA': 'Glutamic acid', 'GAG': 'Glutamic acid',
+    'GGU': 'Glycine', 'GGC': 'Glycine', 'GGA': 'Glycine', 'GGG': 'Glycine'
+}
+
+
+#9 Sorting a dictionanry by keys or by values: 
+
+codon_to_amino_acid_sorted_by_kets = sorted(codon_to_amino_acid.items(), key =operator.itemgetter(0))
+print(codon_to_amino_acid_sorted_by_kets)
+
+codon_to_amino_acid_sorted_by_values = sorted(codon_to_amino_acid.items(), key=operator.itemgetter(1))
+print(codon_to_amino_acid_sorted_by_values)
+
+# Length 
+
+zika_DNA = 'AGTTGTTGATCTGTGT'
+zika_DNA_length = len(zika_DNA)
+print('The first', zika_DNA_length, 'nucleotides', 'fo zika virus DNA are', zika_DNA)
