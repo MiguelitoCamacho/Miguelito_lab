@@ -340,13 +340,57 @@ codon_to_amino_acid = {
 #9 Sorting a dictionanry by keys or by values: 
 
 codon_to_amino_acid_sorted_by_kets = sorted(codon_to_amino_acid.items(), key =operator.itemgetter(0))
-print(codon_to_amino_acid_sorted_by_kets)
+#print(codon_to_amino_acid_sorted_by_kets)
 
 codon_to_amino_acid_sorted_by_values = sorted(codon_to_amino_acid.items(), key=operator.itemgetter(1))
-print(codon_to_amino_acid_sorted_by_values)
+#print(codon_to_amino_acid_sorted_by_values)
 
 # Length 
 
 zika_DNA = 'AGTTGTTGATCTGTGT'
 zika_DNA_length = len(zika_DNA)
 print('The first', zika_DNA_length, 'nucleotides', 'fo zika virus DNA are', zika_DNA)
+
+# Contatenation 
+
+GFP_seq = 'MSKGEELFTG...HGMDELYK '
+print('Green flourescnece protein:', GFP_seq)
+
+M_codon = 'AUG'
+S_codon = 'UCA'
+K_codon = 'AAA'
+G_codon = 'GGU'
+
+RNA_seq = M_codon 
+RNA_seq = RNA_seq + S_codon
+print('RNA sequence', RNA_seq)
+
+RNA_seq = RNA_seq + K_codon + G_codon 
+print(RNA_seq, 'could code amino acid sequence MSKG')
+
+# Slicing
+
+human = 'TTCTTTCATGGGGAAGCAGATTTGGGTACCACCCAAGTATTGACTTACCCATCAACAACCGCTATGTATT'
+print('Human D-loop:', human)
+
+mycodon = 'CAT'
+
+index_mycodon = human.find(mycodon)
+print ('First', mycodon, 'index:', index_mycodon)
+
+first_codon = human[index_mycodon + 3: index_mycodon + 6]
+
+print('First codon after', mycodon, ':', first_codon)
+
+second_codon = human[index_mycodon + 6: index_mycodon + 9]
+print('Second codon after', mycodon, ':', second_codon)
+
+next_to_last_codon = human[ -6: -3]
+print('Next to last codon:', next_to_last_codon)
+
+last_codon = human[-3:]
+print('Last codon:', last_codon)
+
+
+
+2 == (1 + 1)
